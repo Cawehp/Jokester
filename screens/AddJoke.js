@@ -24,8 +24,6 @@ const AddJoke = (props) => {
   return (
     <View style={styles.container}>
       <TextInput
-        multiline = {true} //not working
-        numberOfLines = {4} //not working
         placeholder='Write your text here..'
         onChangeText={text => {addedJoke.id = randNr, addedJoke.key = text}}
         value={addedJoke.key}

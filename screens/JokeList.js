@@ -25,8 +25,8 @@ const JokeList = () => {
         keyExtractor={(key) => key.id}
         renderItem = {({item}) => 
         <View style={{margin: 16}}>
-          <Text>{item.key}</Text>
-          <Button title="Delete Joke" onPress={() => deleteJoke(item.id)} />
+          <Text style={ styles.jokeText }>{item.key}</Text>
+          <Button title="Delete Joke" color = 'red' onPress={() => deleteJoke(item.id)} />
           <Button title="Share Joke" onPress={() => shareMyJoke(item.key)} />
         </View> 
       }

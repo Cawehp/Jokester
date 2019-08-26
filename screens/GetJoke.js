@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
   jokeButtons: {
     alignItems: 'stretch',
-    padding: 5,
+    padding: 16,
     justifyContent: 'center',
 
   },

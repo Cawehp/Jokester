@@ -26,8 +26,8 @@ GetJokeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-happy${focused ? '' : '-outline'}`
+          : 'md-happy'
       }
     />
   ),
@@ -45,7 +45,7 @@ const JokeListStack = createStackNavigator(
 JokeListStack.navigationOptions = {
   tabBarLabel: 'Joke List',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-list' : 'md-list'} />
   ),
 };
 
@@ -61,7 +61,7 @@ const AddJokeStack = createStackNavigator(
 AddJokeStack.navigationOptions = {
   tabBarLabel: 'Add Joke',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} />
   ),
 };
 

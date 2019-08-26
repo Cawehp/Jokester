@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, TextInput, View} from 'react-native'
+import { Button, Text, TextInput, View, StyleSheet} from 'react-native'
 import { useSelector, useDispatch} from 'react-redux'
 import uuid from 'uuid/v4'
 
@@ -22,8 +22,10 @@ const AddJoke = (props) => {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <TextInput 
+    <View style={styles.container}>
+      <TextInput
+        multiline = {true} //not working
+        numberOfLines = {4} //not working
         placeholder='Write your text here..'
         onChangeText={text => {addedJoke.id = randNr, addedJoke.key = text}}
         value={addedJoke.key}
@@ -37,7 +39,20 @@ const AddJoke = (props) => {
 }
 
 AddJoke.navigationOptions = {
+  header: null,
   title: 'Add Joke',
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fae20c',
+
+  },
+
+
+});
 
 export default AddJoke

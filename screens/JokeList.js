@@ -14,12 +14,12 @@ const JokeList = () => {
   }
 
   return (
-    <View>
+    <View style={ styles.container }>
       <FlatList 
         data = {jokeList}
         renderItem = {({item}) => 
         <View>
-          <Text>{item.key}</Text>
+          <Text style={ styles.jokeText }>{item.key}</Text>
           <Button title = "Delete Joke" onPress = {() => deleteJoke(item.id)}/>
         </View> 
       }
@@ -29,10 +29,23 @@ const JokeList = () => {
 }
 
 JokeList.navigationOptions = {
+  header: null,
   title: 'Joke List',
 };
 
 const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: '#fae20c'
+  },
+
+  jokeText: {
+    fontSize: 22,
+    alignContent: 'center',
+    marginTop: 40,
+    padding: 10,
+  },
 
 });
 

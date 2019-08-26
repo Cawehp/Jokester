@@ -2,13 +2,7 @@ import { ADD_JOKE, GET_JOKE, REMOVE_JOKE} from '../actions/jokes'
 
 const initialState = {
     joke: '',
-    jokeList: [{
-        id: 666,
-        key: '88888'
-    },{
-        id: 234,
-        key: 'gawad'
-    }]
+    jokeList: []
 }
 
 const jokeReducer = (state = initialState, action) => {

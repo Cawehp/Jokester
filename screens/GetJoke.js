@@ -10,6 +10,8 @@ import uuid from 'uuid/v4'
 
 import { getJoke, addJoke } from '../store/actions/jokes'
 
+
+
 const GetJoke = (props) => {
 
   const joke = useSelector(state => state.joke)
@@ -34,25 +36,59 @@ const GetJoke = (props) => {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text> {joke} </Text>
-      <Button
+    <View style={ styles.container }>
+      <View style={ styles.textContainer }>
+      <Text style={ styles.jokeText }>{joke}</Text>
+      </View>
+
+        <View style={ styles.jokeButtons}>
+        <Button 
+        title = 'Save this Joke!'
+        onPress = {() => saveJoke(joke)}
+        color = 'red'
+        />
+        <Button
         onPress = {this.fetchJoke}
         title = 'Get Joke'
-      />
-      <Button
-        title = 'Save this Joke!'
-        onPress = {() => saveJoke(joke) }
-      />  
+        />
+        </View>
+        
     </View>
   );
 }
 
 GetJoke.navigationOptions = {
-  title: 'Get Joke'
+  header: null, // remove navigationOptions
+  title: 'Get Joke',
+
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fae20c',
+    
+  },
+  jokeText: {
+    fontSize: 22,
+    alignContent: 'center',
+    marginTop: 40,
+
+  },
+  textContainer: {
+
+    backgroundColor: '#fae20c',
+    height: 400,
+    padding: 30,
+
+  },
+
+  jokeButtons: {
+    alignItems: 'stretch',
+    padding: 5,
+    justifyContent: 'center',
+
+  },
 
 });
 
